@@ -1,0 +1,464 @@
+<html>
+	<head>
+		<!--CSS-->
+		<link href="css/bootstrap.min.css" rel="stylesheet"/>
+		<link href="css/board.css" rel="stylesheet"/>
+		<link href="css/sharing.css" rel="stylesheet"/>
+
+		<!--JS-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+		
+		<script src="js/jquery.touch-punch.min.js"></script>
+		<script src="js/jquery.shapeshift.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				$('.navbar').load('nav-bar-logged.html');
+			});
+		
+			$(document).ready(function() {
+				$(".board-container").shapeshift();
+				$(".empty").remove();
+			})
+		</script>
+		
+	</head>
+	
+	<body>
+		<div class="navbar navbar-default"></div>
+		
+		<div class="container">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#home" data-toggle="tab">WhiteBoard</a></li>
+				<li><a href="#timeline" data-toggle="tab">Major Events</a></li>
+				<li><a href="#success" data-toggle="tab">Success</a></li>
+				<li><a href="#board" data-toggle="tab">KPI</a></li>
+				<li><a href="#sharing" data-toggle="tab">Sharing</a></li>
+				<li><a href="#teamlife" data-toggle="tab">Team Life</a></li>
+			</ul>
+			
+			<div style="margin-top: 20px; margin-bottom: 20px;">
+				<div id="alertInfo" class="alert alert-info" >
+				  <button type="button" class="close" data-dismiss="alert">×</button>
+				  <strong>Heads up!</strong> The project is progressing !
+				</div>
+				<div id="alertSuccess" class="alert alert-success">
+				  <button type="button" class="close" data-dismiss="alert">×</button>
+				  <strong>Well done!</strong> Click <a href="#" class="alert-link">here</a> to notify your completed task as successeful event!
+				</div>
+			</div>
+			
+			<div id="myTabContent" class="tab-content">
+				<div class="tab-pane fade active in" id="home">
+					
+					<div style="margin-top: 20px; margin-bottom: 20px;background-color:#EEEEEE">
+						<a href="new-task.html" class="btn">New Task</a>
+						<a href="#" class="btn">Refresh</a>
+						
+					</div>
+					
+				
+					<table style="width:100%; border-collapse:separate; border-spacing: 5px;">
+						<tr>
+							<td>To do</td>
+							<td>In Progress</td>
+							<td>Done</td>
+						</tr>
+						<tr>
+							<td class="board-container" style="min-width:150px; with:90%">
+								<div class="post-it">
+									<div class="divLeftRed"></div>
+									<div class="divAvatar"><img src="resources/avatar2.png"/></div>
+									<div class="divTitle"><img src="resources/blocker.png"/>&nbsp;Task 1</div>
+									<div class="divContent">Prepare next project - study</div>
+								</div>
+								<div class="post-it">
+									<div class="divLeftGreen"></div>
+									<div class="divAvatar"><img src="resources/avatar2.png"/></div>
+									<div class="divTitle"><img src="resources/low.png"/>Task 2</div>
+									<div class="divContent">Bugfix - bug 123, 345, 644</div>
+								</div>
+								<!--<div class="empty"></div>-->
+							</td>
+							<td id="inProgressTab" class="board-container" style="min-width:150px">
+								<div class="post-it">
+									<div class="divLeftBlue"></div>
+									<div class="divAvatar"><img src="resources/avatar1.png"/></div>
+									<div class="divTitle"><img src="resources/low.png"/>Task 3</div>
+									<div class="divContent">Prepare release packages</div>
+								</div>
+								<!--<div class="empty"></div>-->
+							</td>
+							<td id="doneTab" class="board-container" style="min-width:150px">
+								<div class="post-it">
+									<div class="divLeftRed"></div>
+									<div class="divAvatar"><img src="resources/avatar3.png"/></div>
+									<div class="divTitle"><img src="resources/blocker.png"/>Task 4</div>
+									<div class="divContent">Regression test campaign</div>
+								</div>
+								<!--<div class="empty"></div>-->
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="tab-pane fade" id="success">
+					
+
+					
+				
+					<table style="width:100%; border-collapse:separate; border-spacing: 5px;">
+						<tr>
+							<td>Success</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="board-container" style="min-width:150px; with:90%">
+								<div class="post-it">
+									<div class="divLeftRed"></div>
+									<div class="divAvatar"><img src="resources/avatar2.png"/></div>
+									<div class="divTitle"><img src="resources/blocker.png"/>&nbsp;The Ultimate Task</div>
+									<div class="divContent">Hackathon project presentation</div>
+								</div>
+								
+								<!--<div class="empty"></div>-->
+							</td>
+							<td id="inProgressTab" class="board-container" style="min-width:150px">
+								
+								<!--<div class="empty"></div>-->
+							</td>
+							<td id="doneTab" class="board-container" style="min-width:150px">
+								
+								<!--<div class="empty"></div>-->
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="tab-pane fade" id="timeline">
+				
+					<div class="page-header">
+						<h1 id="tables">Latest events</h1>
+					</div>
+				
+					<table class="table table-striped table-hover ">
+						<thead>
+							<tr>
+								<th>Date</th>
+								<th>Event Type</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>11/17/2014</td>
+								<td>Community Event</td>
+								<td>Hackathon!!</td>
+							</tr>
+							<tr class="warning">
+								<td>11/16/2014</td>
+								<td>Project Monitoring</td>
+								<td>Bug 233456 - New task is added to backlog to fix the bug 233456.</td>
+							</tr>
+							<tr>
+								<td>11/15/2014</td>
+								<td>Project sprint</td>
+								<td>Task 45 - Developement and tests are done.</td>
+							</tr>
+							<tr class="success">
+								<td>11/14/2014</td>
+								<td>Team Project</td>
+								<td>Realase 10.45.68 done by #TSM</td>
+							</tr>
+							
+						</tbody>
+					</table> 
+				</div>
+				<div class="tab-pane fade" id="board">
+					
+					<div class="page-header">
+						<h1 id="tables">Main Indicators</h1>
+					</div>
+                    
+                    <div class="container sharing">
+                        <div class="row">
+                            
+                            <div class="col-lg-4">
+                                    <h2>Team workload</h2>
+                                    
+                                    <img class="img-square" src="resources/jauge.png" alt="Generic placeholder image" style="width: 100%;max-width:250 ">
+                                        </div><!-- /.col-lg-4 -->
+                            
+                            
+                            <div class="col-lg-4">
+                                    <h2>Alerts</h2>
+                                    
+                                    <img class="img-square" src="resources/alert.png" alt="Generic placeholder image" style="width: 100%;max-width:250 ">
+                                    </div><!-- /.col-lg-4 -->
+                            <div class="col-lg-4">
+                                    <h2>Activty Progress</h2>
+                                    
+                                    <img class="img-square" src="resources/prog.png" alt="Generic placeholder image" style="width: 100%;max-width:250 ">
+                                    </div><!-- /.col-lg-4 -->
+                        </div>
+                    </div>
+                    
+					<div class="page-header">
+						<h1 id="tables">Staff Indicators</h1>
+					</div>
+                    
+					<table class="table table-striped table-hover ">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Workload</th>
+								<th>Average meeting/week</th>
+								<th>Mood</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Sebastien DUPONT</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar progress-bar-success" style="width: 40%"></div>
+									</div>
+								</td>
+								<td>4 meetings</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar progress-bar-success" style="width: 100%"></div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>Helene MARTIN</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar progress-bar-success" style="width: 50%"></div>
+									</div>
+								</td>
+								<td>4 meetings</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>Thomas JEAN</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar" style="width: 95%"></div>
+									</div>
+								</td>
+								<td>3 meetings</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>Sophie PROT</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar progress-bar-success" style="width: 55%"></div>
+									</div>
+								</td>
+								<td>4 meetings</td>
+								<td>
+									<div class="progress">
+										<div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+									</div>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+                
+				<div class="tab-pane fade" id="teamlife">
+					
+					<div class="page-header">
+						<h1 id="tables">Team Life</h1>
+					</div>
+                    
+                    <div class="container">
+                    	<div class="col-lg-6">
+                    		
+	                        <div class="page-header">
+	                            <h2 id="tables"><img style="width:7%" src="resources/team event.png">   Team Events</h2>
+	                        </div>
+                        	<table class="table table-striped table-hover ">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Event Type</th>
+                                    <th>Description</th>
+                                    <th>Inscription</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>11/17/2014</td>
+                                    <td>Community Event</td>
+                                    <td>Hackathon!!</td>
+                                    <td><a href="">register</a></td>
+                                </tr>
+                                <tr class="warning">
+                                    <td>11/16/2014</td>
+                                    <td>Project Monitoring</td>
+                                    <td>Bug 233456 - New task is added to backlog to fix the bug 233456.</td>
+                                    <td></td>
+                                </tr>
+                                <tr class="success">
+                                    <td>11/14/2014</td>
+                                    <td>Team Project</td>
+                                    <td>Realase 10.45.68 done by #TSM</td>
+                                    <td></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                                
+                    	</div>
+
+                		<div class="col-lg-6">
+                			 <div class="page-header">
+                                        <h2 id="tables"><img  style="width:7%" src="resources/picture.png"/>   Picture Gallery</h2>
+                                    </div>                        <img  style="width:100%" src="resources/pictureg.png"/>        </td>
+                		</div>
+
+                    </div>
+
+                    <div class="container">
+                    	<div class="col-lg-6">
+                    		<div class="page-header">
+                                        <h2 id="tables"><img  style="width:7%" src="resources/holi.png"/>   Holidays / Out of Office</h2>
+                                    </div>
+                                    <img  style="width:100%" src="resources/planning.png"/>
+	                        
+                    	</div>
+
+                		<div class="col-lg-6">
+                		<div class="page-header">
+                                        <h2 id="tables"><img  style="width:7%" src="resources/team wall.png"/>   Team Wall</h2>
+                                    </div>
+                                    <table class="table table-striped table-hover ">
+                                        <thead>
+                                            <tr>
+                                                <th>Person</th>
+                                                <th>Message</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Pierre DUPONT</td>
+                                                <td>Nouvelle arrivee dans l equipe ...</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Helene TOM</td>
+                                                <td>Nouvelle espace de pause</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pierre DUPONT</td>
+                                                <td>Quelques mots sur Devoxx ...</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pierre DUPONT</td>
+                                                <td>News SG</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                		</div>
+
+                    </div>
+				</div>
+				
+				<div class="tab-pane fade" id="sharing">
+					<div class="container sharing">
+					  <div class="row">
+				        
+				        <div class="col-lg-4">
+				          <img class="img-square" src="resources/idea.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+				          <h2>Innovate</h2>
+
+
+				          <div>
+				          <p><img class="img-square avatar" src="resources/avatar2.png" alt="Generic placeholder image" style="width: 48px; height: 48px;">&nbsp;<strong class="sharing-username">Jane Devops</strong></p>
+				          <p>Microsoft Takes .NET Open Source And Cross-Platform <a href="http://goo.gl/0TSdZy ">http://goo.gl/0TSdZy </a></p>
+				          <p><a class="btn btn-default" href="#" role="button">Comment</a></p>
+				          </div>
+				        </div><!-- /.col-lg-4 -->
+				        <div class="col-lg-4">
+
+
+				          <img class="img-square" src="resources/question.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+				          <h2>Solve an issue</h2>
+
+
+					          <div>
+					          <p><img class="img-square avatar" src="resources/avatar2.png" alt="Generic placeholder image" style="width: 48px; height: 48px;">&nbsp;<strong class="sharing-username">Jane Devops</strong></p>
+					          <p>Show dimensions of PNG-files in OS X Yosemite preview</p>
+					          <p><a class="btn btn-default" href="#" role="button">Comment</a></p>
+					          </div>
+
+
+					          <div>
+					          <p><img class="img-square avatar" src="resources/avatar1.png" alt="Generic placeholder image" style="width: 48px; height: 48px;">&nbsp;<strong class="sharing-username">Developer Superstar</strong></p>
+					          <p>How to import python anaconda packages</p>
+					          <p><a class="btn btn-default" href="#" role="button">Comment</a></p>
+					          </div>
+				        </div><!-- /.col-lg-4 -->
+				        <div class="col-lg-4">
+				          <img class="img-square" src="resources/knowledge-128.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+				          <h2>Share Knowledge</h2>
+				          
+				          <div>
+				          <p><img class="img-square avatar" src="resources/Xavier niel.png" alt="Generic placeholder image" style="width: 48px; height: 48px;">&nbsp;<strong class="sharing-username">Xavier Niel</strong></p>
+				          <p>Full Stack Developer : end of story <a href="http://lnkd.in/dGBfFgh">http://lnkd.in/dGBfFgh</a></p>
+				          <p><a class="btn btn-default" href="#" role="button">Comment</a></p>
+				          </div>
+				        </div><!-- /.col-lg-4 -->
+
+				      </div>
+					</div>
+				</div>
+			</div>
+		
+		<script>
+			$("#alertSuccess").hide();
+			$("#alertInfo").hide();
+		
+			var numItems = $('#doneTab').children('div').length;
+			setInterval(function() {
+				if ($('#doneTab').children('div').length !== numItems) {
+					 if ($('#doneTab').children('div').length > numItems) {
+						numItems = $('#doneTab').children('div').length;
+						//alert('doneTab');
+						$("#alertSuccess").show();
+						setTimeout(function() { $("#alertSuccess").hide(); }, 5000);
+					 }
+				} 
+			}, 8000);
+			
+			var numItems2 = $('#inProgressTab').children('div').length;
+			setInterval(function() {
+				if ($('#inProgressTab').children('div').length !== numItems2) {
+					 if ($('#inProgressTab').children('div').length > numItems2) {
+						numItems2 = $('#inProgressTab').children('div').length;
+						//alert('inProgressTab');
+						$("#alertInfo").show();
+						setTimeout(function() { $("#alertInfo").hide(); }, 5000);
+					 }
+				} 
+			}, 4000);
+			
+		</script>
+		
+	</body>
+
+</html>

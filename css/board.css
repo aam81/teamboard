@@ -1,0 +1,100 @@
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,700");/*!
+ * bootswatch v3.3.1+1
+ * Homepage: http://bootswatch.com
+ * Copyright 2012-2014 Thomas Park
+ * Licensed under MIT
+ * Based on Bootstrap
+*//*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+	.board-container {
+      border: 1px dashed #CCC;
+	  background-color:#EEEEEE;
+      position: relative;
+    }
+
+    .board-container > div {
+      /*background: #AAA;*/
+      position: absolute;
+      height: 200px;
+      width: 90%;
+    }
+
+    .board-container > .ss-placeholder-child {
+      background: transparent;
+      border: 1px dashed blue;
+    }
+	
+	.divLeftRed {
+	  float: left;
+	  width: 5px;
+	  background-color:red;
+	  height: 100%;
+	}
+	
+	.divLeftGreen {
+	  float: left;
+	  width: 5px;
+	  background-color:green;
+	  height: 100%;
+	}
+	
+	.divLeftBlue {
+	  float: left;
+	  width: 5px;
+	  background-color:blue;
+	  height: 100%;
+	}
+	
+	.divAvatar {
+	  float: right;
+	  width: 50px;
+	  background-color:black;
+	  height: 50px;
+	  margin-top: 20px;
+	  margin-right: 20px;
+	  border: 1px solid black;
+	}
+	
+	.divTitle {
+	  float: left;
+	  width: 50%;
+	  height: 50px;
+	  margin-top: 20px;
+	  margin-left: 20px;
+	  font-weight: bold;
+	  font-size:14;
+	}
+	
+	.divContent {
+	  float: left;
+	  max-width: 90%;
+	  height: 50%;
+	  margin-top: 10px;
+	  margin-left: 20px;
+	  font-size:12;
+	}
+	
+	@media only screen and (max-width: 975px) {
+		.divContent {
+			display: none;
+		}
+	}
+	
+	.post-it {
+		background: linear-gradient(135deg, #fefcea 0%,#f1da36 100%);
+		color: #000; 
+		width:93%; 
+		
+		/*
+		-moz-transform: rotate(2deg);
+		-webkit-transform: rotate(2deg);
+		-o-transform: rotate(2deg);
+		-ms-transform: rotate(2deg);
+		transform: rotate(2deg);
+		*/
+		
+		box-shadow: 0px 4px 6px #333;
+		-moz-box-shadow: 0px 4px 6px #333;
+		-webkit-box-shadow: 0px 4px 6px #333;
+		height:200px;
+
+	}

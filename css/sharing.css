@@ -1,0 +1,36 @@
+.avatar {
+	border-radius: 4px;
+}
+
+/* SHARING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+
+.sharing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.sharing div {
+	margin-top: 20px;
+	/* background-color: #eee; */
+}
+.sharing h2 {
+  font-weight: normal;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+.sharing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: left;
+  font-size: 16px;
+}
+.sharing-username {
+	margin-left: 20px;
+	vertical-align: bottom;
+	font-size: 18px;
+}
+.sharing-details {
+	font-size: 20px;
+}
